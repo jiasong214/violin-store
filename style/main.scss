@@ -1,0 +1,418 @@
+#active-scroll-section-0 .scroll-section-0 .fixed,
+#active-scroll-section-1 .scroll-section-1 .fixed,
+#active-scroll-section-2 .scroll-section-2 .fixed,
+#active-scroll-section-3 .scroll-section-3 .fixed,
+#active-scroll-section-4 .scroll-section-4 .fixed,
+#active-scroll-section-5 .scroll-section-5 .fixed {
+  display: block;
+}
+
+#active-scroll-section-0 {
+  background: black;
+  transition: 1s;
+}
+
+#active-scroll-section-1 {
+  background: white;
+  transition: 1s;
+}
+
+section {
+  position: relative;
+  border: 1px dashed rgba(0, 0, 0, 1);
+}
+
+section .fixed {
+  display: none;
+  position: fixed;
+}
+
+main {
+  /* intro-video */
+  .intro-video {
+    .intro-video__canvas {
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+    }
+
+    .intro-video__title {
+      padding-top: 35vh;
+      color: white;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+
+      h1 {
+        font-size: 7rem;
+        font-weight: 700;
+      }
+
+      a {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+
+    .intro-video__text {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 35vh;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 2;
+    }
+
+    .intro-video__text > p {
+      font-size: 3.8rem;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  /* product-desc */
+  .product-desc {
+    width: 80vw;
+    max-width: 980px;
+    margin: 0 auto;
+
+    .product-desc__title {
+      padding-top: 100vh;
+      font-size: 4.4rem;
+      color: gray;
+      font-weight: 700;
+    }
+
+    .product-desc__subTitle {
+      margin-bottom: 50px;
+      font-size: 4.4rem;
+      color: black;
+      font-weight: 700;
+    }
+
+    .product-desc__text {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: gray;
+      font-weight: 400;
+
+      strong {
+        color: black;
+        font-weight: 600;
+      }
+    }
+
+    .product-desc__link {
+      font-size: 1.4rem;
+      color: black;
+      font-weight: 600;
+    }
+  }
+
+  /* product-feature */
+  .product-feature {
+    position: relative;
+
+    .product-feature__innerbox {
+      height: 100vh;
+      margin-top: 50vh;
+      position: relative;
+    }
+
+    .product-feature__img {
+      display: block;
+      height: 80vh;
+      position: absolute;
+      top: 10vh;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      z-index: -1;
+
+      &.fixed {
+        display: none;
+        position: fixed;
+      }
+    }
+
+    .product-feature__title {
+      p {
+        font-size: 4.2rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1;
+      }
+
+      small {
+        display: block;
+        font-size: 1.2rem;
+        font-size: 200;
+      }
+    }
+
+    .product-feature__desc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 50%;
+      opacity: 0;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      &.--a {
+        max-width: 400px;
+        top: 50vh;
+        text-align: right;
+
+        .product-feature__descA__pin {
+          height: 1px;
+          background: black;
+          position: absolute;
+          right: calc(-50% + 10px);
+          top: 10px;
+        }
+      }
+
+      &.--b {
+        width: 40%;
+        max-width: 300px;
+        top: 35vh;
+
+        .product-feature__descB__pin {
+          height: 1px;
+          background: black;
+          position: absolute;
+          /* right: calc(100% + 10px); */
+          left: calc(-30% - 10px);
+          top: 10px;
+        }
+      }
+    }
+  }
+
+  /* violinist */
+  .violinist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50vh 0;
+
+    .violinist__title {
+      width: 80vw;
+      max-width: 980px;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 4rem;
+        color: #acacac;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 4rem;
+        font-weight: 600;
+      }
+    }
+
+    .violinist__canvas.fixed {
+      display: block;
+    }
+
+    .violinist__violinist-info {
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-250%, -50%, 0);
+      opacity: 0;
+      transition: 0.2s;
+
+      // color: white;
+
+      h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 300;
+      }
+    }
+
+    .violinist__violinist-quote {
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transition: 0.2s;
+      opacity: 0;
+
+      p {
+        font-size: 3.8rem;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+      }
+
+      span {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    .violinist__desc {
+      width: 80vw;
+      max-width: 980px;
+      margin: -135px auto 0;
+      font-size: 2rem;
+    }
+  }
+
+  /* support */
+  .support {
+    padding-top: 50vh;
+
+    .fixed {
+      width: 100%;
+    }
+
+    .support__title {
+      font-size: 4rem;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      top: 35vh;
+      z-index: 2;
+    }
+
+    .support__logo {
+      width: 10000vw;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-10%, -50%, 0);
+      z-index: 1;
+    }
+
+    .support__text {
+      top: 40vh;
+      opacity: 0;
+
+      &.--a {
+        z-index: 3;
+      }
+
+      &.--b {
+        z-index: 5;
+      }
+
+      p {
+        font-size: 3.8rem;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .support__path {
+      left: 50%;
+      top: 50%;
+      min-width: 850px;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+
+      path {
+        fill: none;
+        // stroke: #ff0044;
+        stroke: #0071e3;
+        stroke-width: 62;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1401;
+        stroke-dashoffset: 1401;
+      }
+    }
+
+    .support__bowImage {
+      width: auto !important;
+      height: 120vh;
+      left: auto;
+      top: auto;
+      right: -10%;
+      bottom: -80%;
+      width: 3.5vw;
+      transform: rotate(-120deg);
+      z-index: 6;
+    }
+
+    .support__caseImage {
+      width: auto !important;
+      height: 100vh;
+      left: auto;
+      top: -10vh;
+      right: -10%;
+      width: 3.5vw;
+      z-index: 6;
+    }
+
+    .support__case-logo {
+      text-align: center;
+      top: 100vh;
+      z-index: 1;
+
+      p {
+        margin-bottom: 25vh;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 5rem;
+        font-weight: 900;
+      }
+    }
+  }
+
+  /* shop */
+  .shop {
+    width: 80vw;
+    max-width: 980px;
+    min-height: 60vh;
+    margin: 0 auto;
+
+    .shop__title {
+      font-size: 3.8rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .shop__text {
+      margin-bottom: 30px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .shop__shop-btn {
+      display: block;
+      width: 120px;
+      padding: 5px 0;
+      margin: 0 auto;
+      background: #0071e3;
+      border-radius: 20px;
+      font-size: 1rem;
+      color: white;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/main.css" />
+    <script defer src="script/mainUI.js"></script>
+    <script defer type="module" src="script/global/index.js"></script>
+    <title>Violin</title>
+  </head>
+  <body class="white-header">
+    <div id="container">
+      <header>
+        <nav class="global-nav">
+          <div class="global-nav__innerbox">
+            <ul class="global-nav__list">
+              <li class="global-nav__logo">
+                <a href="index.html">
+                  <img src="images/nav_images/logo.png" alt="logo" />
+                </a>
+              </li>
+              <li class="global-nav__searchBtn">
+                <img src="images/nav_images/search.png" alt="" />
+              </li>
+              <li class="global-nav__cartBtn">
+                <img src="images/nav_images/cart.png" alt="" />
+              </li>
+            </ul>
+            <aside class="global-nav__cartModal">
+              <div class="global-nav__cartModal__myItems">
+                <ul class="global-nav__cartModal__myItems__list"></ul>
+                <div class="global-nav__cartModal__myItems__checkoutBtn">
+                  Check out
+                </div>
+              </div>
+              <div class="global-nav__cartModal__empty">You Bag is empty.</div>
+              <div class="global-nav__cartModal__menu">
+                <a href="/cart.html" class="global-nav__cartModal__menu__bag">
+                  <object
+                    data="images/nav_images/cart-blue.svg"
+                    type="image/svg+xml"
+                  ></object>
+                  <p>Bag</p>
+                </a>
+                <a href="" class="global-nav__cartModal__menu__signIn">
+                  <object
+                    data="images/nav_images/signin.svg"
+                    type="image/svg+xml"
+                  ></object>
+                  <p>Sign In</p>
+                </a>
+              </div>
+              <span class="global-nav__cartModal__square"></span>
+            </aside>
+          </div>
+        </nav>
+        <nav class="local-nav">
+          <ul class="local-nav__list">
+            <li class="local-nav__title">
+              <a href="index.html">Violin</a>
+            </li>
+            <li class="local-nav__item">
+              <a href="index.html">Overview</a>
+            </li>
+            <li class="local-nav__item">
+              <a href="index.html">Specs</a>
+            </li>
+            <li class="local-nav__item --buy">
+              <a href="shop.html">Shop</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="intro-video scroll-section-0">
+          <canvas
+            class="intro-video__canvas fixed"
+            width="1920px"
+            height="1080px"
+          ></canvas>
+          <div class="intro-video__title">
+            <h1>Violin.</h1>
+            <a href=""
+              >Perferendis dolorum aperiam, eligendi fugit deserunt esse
+              fugiat.</a
+            >
+          </div>
+          <div class="intro-video__text --a fixed">
+            <p>Lorem ipsum dolor <br />sit amet consectetur.</p>
+          </div>
+          <div class="intro-video__text --b fixed">
+            <p>
+              Adipisicing elit ea expedita<br />
+              impedit nostrum commodi sed.
+            </p>
+          </div>
+          <div class="intro-video__text --c fixed">
+            <p>Beatae rerum<br />ipsa doloremque.</p>
+          </div>
+        </section>
+        <section class="product-desc scroll-section-1">
+          <h2 class="product-desc__title">Corporis 2 nobis quidem.</h2>
+          <h3 class="product-desc__subTitle">A odit quidem unde distinctio.</h3>
+          <p class="product-desc__text">
+            <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing
+            elit. Corporis nobis quidem mollitia ratione tenetur. Quisquam, ipsa
+            voluptatibus, fugit, nihil consequuntur ipsum sequi sapiente
+            blanditiis. <strong>Tempora unde</strong> praesentium cum id illum
+            distinctio aliquid harum repellendus perferendis! Consectetur,
+            repudiandae aperiam corporis quaerat ut architecto illo deleniti
+            aliquid sed rem fugit. Sint,
+            <strong>40 explicabo sapiente nam</strong> autem quisquam libero
+            dolorem delectus modi fugit animi dolore cupiditate optio, saepe
+            odit beatae quidem unde distinctio esse maiores illo ad magni
+            laborum!
+          </p>
+          <a href="" class="product-desc__link">
+            Learn more about Corporis 2 >
+          </a>
+        </section>
+        <section class="product-feature scroll-section-2">
+          <div class="product-feature__innerbox">
+            <div class="product-feature__title">
+              <p>
+                <small>Omnis facilis</small>
+                Illo consectetur.
+              </p>
+            </div>
+            <img
+              class="product-feature__img"
+              src="images/main_images/product-feature__violin.jpg"
+              alt="violin"
+            />
+          </div>
+          <div class="product-feature__desc --a fixed">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur. <br />
+              Dignissimos deleniti aspernatur.
+            </p>
+            <div class="product-feature__descA__pin"></div>
+          </div>
+          <div class="product-feature__desc --b fixed">
+            <h3>Autem modi animi</h3>
+            <p>
+              Exercitationem sit laboriosam.<br />
+              dignissimos error iure dolorum illum laudantium.
+            </p>
+            <div class="product-feature__descB__pin"></div>
+          </div>
+        </section>
+        <section class="violinist scroll-section-3">
+          <div class="violinist__title">
+            <h2>Possimus</h2>
+            <p>Labore nam possimus.</p>
+          </div>
+          <canvas class="violinist__canvas" width="1920px" height="1080px">
+          </canvas>
+          <div class="violinist__violinist-info fixed">
+            <h2>Lorem Ipsum</h2>
+            <h3>Violinist & Composer</h3>
+          </div>
+          <div class="violinist__violinist-quote fixed">
+            <p>"Lorem ipsum dolor sit amet consectetur."</p>
+            <span>Lorem Ipsum</span>
+          </div>
+          <div class="violinist__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            exercitationem voluptatum quo, iusto facere ea. Labore nam voluptas
+            possimus placeat quos modi ex accusantium esse in corrupti
+            voluptatum reiciendis, quae, odit facilis. Facere sit tenetur
+            officia doloribus deserunt esse. Tempora, aspernatur? Illo sapiente
+            eius explicabo facilis tempore. Sequi libero doloribus repellat
+            natus quia cum! Adipisci soluta velit tempora ea! Quasi, laborum
+            pariatur. Velit eligendi, consequuntur quis ut magni nostrum earum
+            minus et, nisi impedit facere doloribus a obcaecati cum sint
+            repudiandae at aliquid molestiae possimus rem? Minima, ducimus
+            veritatis, nam alias ex maxime, repudiandae inventore est tenetur
+            laboriosam obcaecati sunt!
+          </div>
+        </section>
+        <section class="support scroll-section-4">
+          <h2 class="support__title">AND</h2>
+          <object
+            class="support__logo fixed"
+            data="images/main_images/support__bowLogo.svg"
+            type="image/svg+xml"
+          ></object>
+          <div class="support__text --a fixed">
+            <p>with support</p>
+          </div>
+          <span class="support__path fixed">
+            <svg
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 700 450"
+            >
+              <path
+                class="st1"
+                d="M709,41.5c-194,38-387,122-455,159c-64.13,34.89-73.4,42.42,20,26c82.5-14.5,126.34-33.68,185-38 c47.5-3.5,69.22,7.98-11,39c-75,29-251,98-459,169"
+              ></path>
+            </svg>
+          </span>
+          <div class="support__text --b fixed">
+            <p>for</p>
+          </div>
+          <img
+            class="support__bowImage fixed"
+            src="images/main_images/support__bow.png"
+          />
+          <img
+            class="support__caseImage fixed"
+            src="images/main_images/support__case.png"
+          />
+          <div class="support__case-logo fixed">
+            <p>and</p>
+            <h2>BAM Case</h2>
+          </div>
+        </section>
+        <section class="shop scroll-section-5">
+          <h1 class="shop__title">Find the right violin for you.</h1>
+          <p class="shop__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            est accusamus ducimus voluptas fuga corporis dolor reprehenderit non
+            nostrum, necessitatibus, architecto rerum veniam modi perspiciatis,
+            animi labore expedita! Quos, nihil?
+          </p>
+          <a class="shop__shop-btn" href="/shop.html">Shop Now</a>
+        </section>
+      </main>
+      <footer>
+        <h1>Violin</h1>
+        <div class="copyright">
+          <p>&copy; 2020 Jia Song</p>
+          <a>Github</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

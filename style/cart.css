@@ -1,0 +1,194 @@
+#cart {
+  width: 80vw;
+  max-width: 980px;
+  margin: 0 auto;
+  color: black;
+}
+
+#cart.empty .empty {
+  display: block;
+}
+
+#cart.empty .brief,
+#cart.empty .cart {
+  display: none;
+}
+
+#cart .empty {
+  display: none;
+  min-height: calc(100vh - 47px);
+  padding-top: calc(104px + 15vh);
+}
+
+#cart .empty .empty__para {
+  margin-bottom: 30px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#cart .empty .empty__shopBtn {
+  display: block;
+  width: 280px;
+  padding: 5px 0;
+  margin: 0 auto;
+  background: #0071e3;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+#cart .brief {
+  padding: calc(104px + 50px) 0 50px;
+}
+
+#cart .brief .brief__price {
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#cart .brief .brief__shipping {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#cart .brief .brief__checkoutBtn {
+  display: block;
+  width: 280px;
+  padding: 5px 0;
+  margin: 0 auto;
+  background: #0071e3;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+#cart .cart {
+  margin-bottom: 100px;
+}
+
+#cart .cart .cart__list {
+  margin-bottom: 50px;
+}
+
+#cart .cart .cart__list .cart__item {
+  padding: 30px 0;
+  border-top: 1px solid #d2d2d7;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 2fr 1fr;
+      grid-template-columns: 150px 2fr 1fr;
+  grid-gap: 50px;
+}
+
+#cart .cart .cart__list .cart__item:last-child {
+  border-bottom: 1px solid #d2d2d7;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__image {
+  display: block;
+  height: 240px;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__name {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox .cart__item__quantity {
+  width: 50px;
+  height: 35px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox .cart__item__quantity:focus {
+  outline-color: #0066cc98;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox .cart__item__price {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox .cart__item__deleteBtn {
+  font-size: 1rem;
+  color: #0066cc;
+  text-align: right;
+  cursor: pointer;
+}
+
+#cart .cart .cart__list .cart__item .cart__item__innerbox .cart__item__deleteBtn:hover {
+  text-decoration: underline;
+}
+
+#cart .cart .cart__summary {
+  width: 60%;
+  margin-left: auto;
+}
+
+#cart .cart .cart__summary .cart__summary__subtotal, #cart .cart .cart__summary .cart__summary__shipping, #cart .cart .cart__summary .cart__summary__total {
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#cart .cart .cart__summary .cart__summary__subtotal .cart__summary__label, #cart .cart .cart__summary .cart__summary__shipping .cart__summary__label, #cart .cart .cart__summary .cart__summary__total .cart__summary__label,
+#cart .cart .cart__summary .cart__summary__subtotal .cart__summary__value,
+#cart .cart .cart__summary .cart__summary__shipping .cart__summary__value,
+#cart .cart .cart__summary .cart__summary__total .cart__summary__value {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#cart .cart .cart__summary .cart__summary__shipping {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d2d2d7;
+}
+
+#cart .cart .cart__summary .cart__summary__total {
+  margin-bottom: 20px;
+}
+
+#cart .cart .cart__summary .cart__summary__total .cart__summary__label,
+#cart .cart .cart__summary .cart__summary__total .cart__summary__value {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+#cart .cart .cart__summary .cart__summary__checkoutBtn {
+  display: block;
+  width: 320px;
+  padding: 12px 0;
+  margin-left: auto;
+  background: #0071e3;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+/*# sourceMappingURL=cart.css.map */

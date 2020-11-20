@@ -1,0 +1,94 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "name": "Selectio violin Opus 10 no.5: a modern-day Stradivari model",
+      "imageURL": "images/product_images/Selectio violin Opus 10 no.5.jpg",
+      "info": {
+        "tone": "warm, bright, radiant, sonorous, rich in over tones",
+        "length": "35.5 cm"
+      },
+      "price": 769.0
+    },
+    {
+      "id": 1,
+      "name": "Violin set opus 11 no. 5 from the CV Selectio portfolio",
+      "imageURL": "images/product_images/Violin set opus 11 no. 5 from the CV Selectio portfolio.jpg",
+      "info": {
+        "tone": "warm, mature, clear, strong",
+        "length": "35.7 cm"
+      },
+      "price": 869.0
+    },
+    {
+      "id": 2,
+      "name": "Old Gemran violin by W. Ludiwg, Freiburg 1968",
+      "imageURL": "images/product_images/Old Gemran violin by W. Ludiwg, Freiburg 1968.jpg",
+      "info": {
+        "tone": "clear, radiant, rich in overtones, with substance",
+        "length": "36.0 cm"
+      },
+      "price": 990.0
+    },
+    {
+      "id": 3,
+      "name": "Attractive French J.T.L. Médio-Fino violin",
+      "imageURL": "images/product_images/Attractive French J.T.L. Médio-Fino violin.jpg",
+      "info": {
+        "tone": "warm, sweet, mature",
+        "length": "35.7 cm"
+      },
+      "price": 300.0
+    },
+    {
+      "id": 4,
+      "name": "Violin opus 12 no. 14 from the CV Selectio portfolio",
+      "imageURL": "images/product_images/Violin opus 12 no. 14 from the CV Selectio portfolio.jpg",
+      "info": {
+        "tone": "large, mature, clear, radiant, Italian",
+        "length": "35.6 cm"
+      },
+      "price": 990.0
+    },
+    {
+      "id": 5,
+      "name": "CV Selectio Opus 14 violin",
+      "imageURL": "images/product_images/CV Selectio Opus 14 violin.jpg",
+      "info": {
+        "tone": "warm, mellow, strong, rounded, colorful",
+        "length": "35.5 cm"
+      },
+      "price": 300.0
+    },
+    {
+      "id": 6,
+      "name": "Old Markneukirchen violin with a bright, brilliant sound",
+      "imageURL": "images/product_images/Old Markneukirchen violin with a bright, brilliant sound.jpg",
+      "info": {
+        "tone": "clear, brilliant",
+        "length": "35.7 cm"
+      },
+      "price": 1390.0
+    },
+    {
+      "id": 7,
+      "name": "Old German violin, probably by C.A. Wunderlich, oil varnished",
+      "imageURL": "images/product_images/Old German violin, probably by C.A. Wunderlich, oil varnished.jpg",
+      "info": {
+        "tone": "clear, rich in overtones",
+        "length": "35.8 cm"
+      },
+      "price": 1250.0
+    },
+    {
+      "id": 8,
+      "name": "Antique violin, Schuster & Co. Markneukirchen, circa 1920",
+      "imageURL": "images/product_images/Antique violin, Schuster & Co. Markneukirchen, circa 1920.jpg",
+      "info": {
+        "tone": "bright, clear, strong",
+        "length": "35.9 cm"
+      },
+      "price": 1290.0
+    }
+  ]
+}

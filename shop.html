@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/global.css" />
+    <link rel="stylesheet" href="style/shop.css" />
+    <script defer type="module" src="script/global/index.js"></script>
+    <script defer type="module" src="script/shop/index.js"></script>
+    <title>Violin</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <nav class="global-nav">
+          <div class="global-nav__innerbox">
+            <ul class="global-nav__list">
+              <li class="global-nav__logo">
+                <a href="index.html">
+                  <img src="images/nav_images/logo.png" alt="logo" />
+                </a>
+              </li>
+              <li class="global-nav__searchBtn">
+                <img src="images/nav_images/search.png" alt="" />
+              </li>
+              <li class="global-nav__cartBtn">
+                <img src="images/nav_images/cart.png" alt="" />
+              </li>
+            </ul>
+            <aside class="global-nav__cartModal">
+              <div class="global-nav__cartModal__myItems">
+                <ul class="global-nav__cartModal__myItems__list"></ul>
+                <div class="global-nav__cartModal__myItems__checkoutBtn">
+                  Check out
+                </div>
+              </div>
+              <div class="global-nav__cartModal__empty">You Bag is empty.</div>
+              <div class="global-nav__cartModal__menu">
+                <a href="/cart.html" class="global-nav__cartModal__menu__bag">
+                  <object
+                    data="images/nav_images/cart-blue.svg"
+                    type="image/svg+xml"
+                  ></object>
+                  <p>Bag</p>
+                </a>
+                <a href="" class="global-nav__cartModal__menu__signIn">
+                  <object
+                    data="images/nav_images/signin.svg"
+                    type="image/svg+xml"
+                  ></object>
+                  <p>Sign In</p>
+                </a>
+              </div>
+              <span class="global-nav__cartModal__square"></span>
+            </aside>
+          </div>
+        </nav>
+        <nav class="local-nav">
+          <ul class="local-nav__list">
+            <li class="local-nav__title">
+              <a href="index.html">Violin</a>
+            </li>
+            <li class="local-nav__item">
+              <a href="index.html">Overview</a>
+            </li>
+            <li class="local-nav__item">
+              <a href="index.html">Specs</a>
+            </li>
+            <li class="local-nav__item --buy">
+              <a href="shop.html">Shop</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div id="shop">
+        <ul class="shop__list"></ul>
+        <div class="shop__pagenation"></div>
+      </div>
+      <footer>
+        <h1>Violin</h1>
+        <div class="copyright">
+          <p>&copy; 2020 Jia Song</p>
+          <a>Github</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
