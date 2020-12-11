@@ -64,9 +64,9 @@
         desc1_opacity_out: [1, 0, { start: 0.4, end: 0.43 }],
         desc2_opacity_out: [1, 0, { start: 0.75, end: 0.78 }],
         desc1_translateX_in: [-150, -160, { start: 0.2, end: 0.3 }],
-        desc2_translateX_in: [70, 80, { start: 0.55, end: 0.65 }],
+        desc2_translateX_in: [60, 70, { start: 0.55, end: 0.65 }],
         desc1_translateX_out: [-160, -150, { start: 0.4, end: 0.43 }],
-        desc2_translateX_out: [80, 70, { start: 0.75, end: 0.78 }],
+        desc2_translateX_out: [70, 60, { start: 0.75, end: 0.78 }],
         pin1_scaleX: [0, 40, { start: 0.2, end: 0.3 }],
         pin2_scaleX: [0, 30, { start: 0.55, end: 0.65 }],
       },
@@ -125,7 +125,7 @@
         bowImage_right: [-10, 70, { start: 0.3, end: 0.8 }],
         bowImage_bottom: [-80, 150, { start: 0.3, end: 0.8 }],
         bowImage_rotate: [-120, -200, { start: 0.3, end: 0.8 }],
-        caseImage_right: [-50, 120, { start: 0.5, end: 0.9 }],
+        caseImage_right: [-150, 120, { start: 0.5, end: 0.9 }],
         caseImage_bottom: [30, -50, { start: 0.5, end: 0.9 }],
         caseImage_rotate: [0, 80, { start: 0.5, end: 0.9 }],
         text1_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
@@ -286,11 +286,8 @@
     switch (currentSection) {
       case 0:
         document.body.classList.add("white-header");
-
-        //이미지가 왜 돌아가는지??
-        // let sequence = Math.round(calcValues(values.imageSequence));
-        // objs.context.drawImage(objs.videoImages[sequence], 0, 0);
-        // objs.canvas.style.opacity = calcValues(values.canvas_opacity);
+        objs.canvas.style.opacity = calcValues(values.canvas_opacity);
+        // canvas drawing is handled function 'accelerateScroll'
 
         if (scrollRatio <= 0.22) {
           objs.text1.style.opacity = calcValues(values.text1_opacity_in);
@@ -397,6 +394,80 @@
         } else {
           objs.image.style.top = `10vh`;
         }
+
+        // //section 3 image pre-setting
+        // //step 1-0. make a full screen canvas
+        // let widthRatio = window.innerWidth / sectionInfo[3].objs.canvas.width;
+        // let heightRatio =
+        //   window.innerHeight / sectionInfo[3].objs.canvas.height;
+        // let canvasRatio;
+
+        // widthRatio <= heightRatio
+        //   ? (canvasRatio = heightRatio)
+        //   : (canvasRatio = widthRatio);
+
+        // sectionInfo[3].objs.canvas.style.transform = `scale(${canvasRatio})`;
+        // sectionInfo[3].objs.context.fillStyle = "white";
+        // sectionInfo[3].objs.context.drawImage(
+        //   sectionInfo[3].objs.imagesArray[0],
+        //   0,
+        //   0
+        // );
+
+        // //step 1-1. set white boxs start, end point
+        // if (!sectionInfo[3].values.rectStart) {
+        //   sectionInfo[3].values.rectStart =
+        //     sectionInfo[3].objs.canvas.offsetTop +
+        //     (sectionInfo[3].objs.canvas.height -
+        //       sectionInfo[3].objs.canvas.height * canvasRatio) /
+        //       2;
+        //   sectionInfo[3].values.leftRect[2].start =
+        //     window.innerHeight / 3 / sectionHeight;
+        //   sectionInfo[3].values.rightRect[2].start =
+        //     window.innerHeight / 3 / sectionHeight;
+        //   sectionInfo[3].values.leftRect[2].end =
+        //     sectionInfo[3].values.rectStart / sectionHeight;
+        //   sectionInfo[3].values.rightRect[2].end =
+        //     sectionInfo[3].values.rectStart / sectionHeight;
+        // }
+
+        // let recalculatedInnerWidth = document.body.offsetWidth / canvasRatio;
+        // let rectWidth;
+
+        // //to make canvas style - width: 80vw, max-width: 980px
+        // if (window.innerWidth >= 1225) {
+        //   rectWidth = (window.innerWidth - 980) / 2;
+        //   // console.log(window.innerWidth - rectWidth * 2);
+        //   //사이즈가 안맞음
+        // } else {
+        //   rectWidth = recalculatedInnerWidth * 0.1;
+        // }
+
+        // //step 1-2. set white boxes start width and end width
+        // sectionInfo[3].values.leftRect[0] =
+        //   (sectionInfo[3].objs.canvas.width - recalculatedInnerWidth) / 2;
+        // sectionInfo[3].values.leftRect[1] =
+        //   sectionInfo[3].values.leftRect[0] - rectWidth;
+        // sectionInfo[3].values.rightRect[0] =
+        //   sectionInfo[3].values.leftRect[0] +
+        //   recalculatedInnerWidth -
+        //   rectWidth;
+        // sectionInfo[3].values.rightRect[1] =
+        //   sectionInfo[3].values.rightRect[0] + rectWidth;
+
+        // //draw white boxes on the side
+        // sectionInfo[3].objs.context.fillRect(
+        //   parseInt(calcValues(sectionInfo[3].values.leftRect)),
+        //   0,
+        //   parseInt(rectWidth),
+        //   sectionInfo[3].objs.canvas.height
+        // );
+        // sectionInfo[3].objs.context.fillRect(
+        //   parseInt(calcValues(sectionInfo[3].values.rightRect)),
+        //   0,
+        //   parseInt(rectWidth),
+        //   sectionInfo[3].objs.canvas.height
+        // );
 
         break;
       case 3:
@@ -684,17 +755,39 @@
     }
   };
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 600) {
-      setSectionHeight();
-      setCurrentSection();
-      setCanvasScale();
-    }
+  const checkUserWidth = () => {
+    const conatainer = document.querySelector("#container");
 
-    sectionInfo[3].values.rectStart = 0;
+    if (window.innerWidth < 600) {
+      container.classList.add("is-mobile");
+      container.classList.remove("is-desktop");
+    } else {
+      container.classList.add("is-desktop");
+      container.classList.remove("is-mobile");
+    }
+  };
+
+  const changeMobileHeaderColor = () => {
+    const intro = document.querySelector(".m__intro");
+
+    if (intro.offsetHeight <= window.pageYOffset) {
+      document.body.classList.remove("white-header");
+    } else {
+      document.body.classList.add("white-header");
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    checkUserWidth();
+    setSectionHeight();
+    setCurrentSection();
+    setCanvasScale();
+
+    // sectionInfo[3].values.rectStart = 0;
   });
 
   window.addEventListener("orientationchange", () => {
+    checkUserWidth();
     setSectionHeight();
     setCurrentSection();
     setCanvasScale();
@@ -709,20 +802,27 @@
       accelerationId = requestAnimationFrame(accelerateScroll);
       accelerationState = true;
     }
+
+    if (window.innerWidth < 600) {
+      changeMobileHeaderColor();
+    }
   });
 
   window.addEventListener("load", () => {
+    checkUserWidth();
     setSectionHeight();
     setCurrentSection();
     setCanvasScale();
     setCanvasImage();
 
-    //set the first screen
-    // sectionInfo[0].objs.context.drawImage(
-    //   sectionInfo[0].objs.videoImages[1],
-    //   0,
-    //   0
-    // );
-    // sectionInfo[0].objs.canvas.style.opacity = "1";
+    //어디서 시간이 걸리는지?
+    setTimeout(() => {
+      //set the first screen
+      sectionInfo[0].objs.context.drawImage(
+        sectionInfo[0].objs.videoImages[1],
+        0,
+        0
+      );
+    }, 100);
   });
 })();

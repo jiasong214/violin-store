@@ -43,15 +43,15 @@ const Controller = (() => {
     View.setCartNum(cartData);
   };
 
-  //수정 필요
   const closeCart = () => {
+    const cartCloseBtn = document.querySelector(
+      ".global-nav__cartModal__closeBtn"
+    );
     const cartModal = document.querySelector(".global-nav__cartModal");
 
-    if (cartModal.classList.contains("active")) {
-      document.addEventListener("click", () => {
-        cartModal.classList.remove("active");
-      });
-    }
+    cartCloseBtn.addEventListener("click", () => {
+      cartModal.classList.remove("active");
+    });
   };
 
   const firstRender = async () => {

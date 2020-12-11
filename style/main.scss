@@ -1,3 +1,36 @@
+html {
+  font-size: 16px;
+
+  @media (max-width: 980px) {
+    font-size: 12px;
+  }
+  @media (max-width: 600px) {
+    font-size: 9px;
+  }
+}
+
+//responsive design 600px
+#container {
+  &.is-mobile {
+    .for-mobile {
+      display: block;
+    }
+    .for-desktop {
+      display: none;
+    }
+  }
+
+  &.is-desktop {
+    .for-desktop {
+      display: block;
+    }
+    .for-mobile {
+      display: none;
+    }
+  }
+}
+
+//when section is activated, make 'fixed' elements appear
 #active-scroll-section-0 .scroll-section-0 .fixed,
 #active-scroll-section-1 .scroll-section-1 .fixed,
 #active-scroll-section-2 .scroll-section-2 .fixed,
@@ -7,27 +40,27 @@
   display: block;
 }
 
-#active-scroll-section-0 {
+#active-scroll-section-0 .for-desktop {
   background: black;
   transition: 1s;
 }
 
-#active-scroll-section-1 {
+#active-scroll-section-1 .for-desktop {
   background: white;
   transition: 1s;
 }
 
 section {
   position: relative;
-  border: 1px dashed rgba(0, 0, 0, 1);
+  border: 1px dashed rgba(0, 0, 0, 0);
+
+  .fixed {
+    display: none;
+    position: fixed;
+  }
 }
 
-section .fixed {
-  display: none;
-  position: fixed;
-}
-
-main {
+main.for-desktop {
   /* intro-video */
   .intro-video {
     .intro-video__canvas {
@@ -48,7 +81,7 @@ main {
         font-weight: 700;
       }
 
-      a {
+      p {
         font-size: 1.6rem;
         font-weight: 600;
       }
@@ -271,10 +304,16 @@ main {
     }
 
     .violinist__desc {
+      em {
+        color: black;
+        font-style: normal;
+      }
       width: 80vw;
       max-width: 980px;
       margin: -135px auto 0;
       font-size: 2rem;
+      color: #888;
+      font-weight: 500;
     }
   }
 
@@ -346,11 +385,8 @@ main {
     .support__bowImage {
       width: auto !important;
       height: 120vh;
-      left: auto;
-      top: auto;
       right: -10%;
       bottom: -80%;
-      width: 3.5vw;
       transform: rotate(-120deg);
       z-index: 6;
     }
@@ -358,10 +394,8 @@ main {
     .support__caseImage {
       width: auto !important;
       height: 100vh;
-      left: auto;
       top: -10vh;
-      right: -10%;
-      width: 3.5vw;
+      right: -150%;
       z-index: 6;
     }
 
@@ -389,6 +423,8 @@ main {
     max-width: 980px;
     min-height: 60vh;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
 
     .shop__title {
       font-size: 3.8rem;
@@ -410,6 +446,286 @@ main {
       background: #0071e3;
       border-radius: 20px;
       font-size: 1rem;
+      color: white;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+main.for-mobile {
+  background: white;
+
+  .m__intro {
+    background: black;
+
+    .intro__innerbox {
+      height: 100vh;
+      margin-bottom: 20px;
+    }
+
+    .intro__title {
+      padding-top: calc(104px + 100px);
+      position: relative;
+      z-index: 2;
+
+      h1,
+      p {
+        font-size: 7rem;
+        color: white;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    img {
+      display: block;
+      height: 60vw;
+      filter: brightness(0.8);
+      position: relative;
+      left: 20%;
+      top: -50px;
+      z-index: 1;
+    }
+
+    .intro__text {
+      width: 80vw;
+      margin: 0 auto;
+
+      p {
+        margin-bottom: 50px;
+        font-size: 2.4rem;
+        color: white;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+
+  .m__product-desc {
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 30vh;
+
+    .product-desc__title {
+      font-size: 4.2rem;
+      color: gray;
+      font-weight: 700;
+    }
+
+    .product-desc__subTitle {
+      margin-bottom: 50px;
+      font-size: 4.2rem;
+      color: black;
+      font-weight: 700;
+    }
+
+    .product-desc__text {
+      margin-bottom: 20px;
+      font-size: 2.4rem;
+      color: gray;
+      font-weight: 400;
+
+      strong {
+        color: black;
+        font-weight: 600;
+      }
+    }
+
+    .product-desc__link {
+      font-size: 2rem;
+      color: black;
+      font-weight: 600;
+    }
+  }
+
+  .m__product-feature {
+    padding-top: 30vh;
+
+    .product-feature__title {
+      small {
+        display: block;
+        font-size: 1.8rem;
+      }
+
+      font-size: 4.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .product-feature__innerbox {
+      position: relative;
+    }
+
+    .product-feature__img {
+      width: 80%;
+      position: relative;
+      transform: translateX(-30%);
+    }
+
+    .product-feature__desc {
+      position: absolute;
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      .product-feature__desc__pin {
+        position: absolute;
+        top: 15px;
+        right: calc(100% + 5px);
+        width: 20%;
+        height: 1px;
+        background: black;
+      }
+
+      &.--a {
+        top: 20%;
+        left: 30%;
+      }
+
+      &.--b {
+        top: 60%;
+        left: 40%;
+      }
+    }
+  }
+
+  .m__violinist {
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 30vh;
+
+    .violinist__title {
+      h2 {
+        font-size: 4.2rem;
+        color: #acacac;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 4.2rem;
+        font-weight: 600;
+      }
+    }
+
+    .violinist__image {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 30px;
+      background: url("../images/main_images/violinist__1.png") no-repeat center
+        center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .violinist__violinist-info {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+
+    .violinist__desc {
+      em {
+        color: black;
+        font-style: normal;
+      }
+
+      font-size: 2.4rem;
+      color: #888;
+      font-weight: 500;
+    }
+  }
+
+  .m__support {
+    padding-top: 30vh;
+    position: relative;
+
+    .support__title {
+      margin-bottom: 50px;
+      font-size: 3.4rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .support__bow-logo {
+      width: 90%;
+    }
+
+    .support__bowImage {
+      width: 40%;
+      position: absolute;
+      top: 20%;
+      left: 40%;
+      transform: rotate(-70deg);
+    }
+
+    .support__case-logo {
+      position: relative;
+
+      p {
+        margin: 120px 0;
+        font-size: 3.4rem;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 6.8rem;
+        text-align: center;
+      }
+    }
+
+    .support__caseImage {
+      width: 30%;
+      position: relative;
+      left: 30%;
+      top: -25vw;
+      transform: rotate(50deg);
+    }
+  }
+
+  .m__shop {
+    width: 80vw;
+    min-height: 60vh;
+    margin: 0 auto;
+
+    .shop__title {
+      font-size: 5.4vw;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .shop__text {
+      margin-bottom: 30px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .shop__shop-btn {
+      display: block;
+      width: 120px;
+      padding: 5px 0;
+      margin: 0 auto;
+      background: #0071e3;
+      border-radius: 20px;
+      font-size: 1.6rem;
       color: white;
       font-weight: 400;
       text-align: center;

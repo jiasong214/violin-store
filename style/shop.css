@@ -1,3 +1,13 @@
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 780px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 #shop {
   width: 80%;
   max-width: 980px;
@@ -12,12 +22,25 @@
       grid-template-columns: repeat(3, 1fr);
 }
 
+@media (max-width: 780px) {
+  #shop .shop__list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 #shop .shop__list .shop__item {
   padding: 20px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr auto auto;
       grid-template-rows: 1fr auto auto;
+}
+
+@media (max-width: 600px) {
+  #shop .shop__list .shop__item {
+    padding: 10px;
+  }
 }
 
 #shop .shop__list .shop__item .shop__item__image {
@@ -76,5 +99,15 @@
 #shop .shop__list .shop__item .shop__item__btnBox .shop__item__cartBtn object {
   position: relative;
   z-index: -1;
+}
+
+@media (max-width: 480px) {
+  #shop .shop__list .shop__item .shop__item__btnBox .shop__item__buyBtn {
+    width: 100%;
+  }
+  #shop .shop__list .shop__item .shop__item__btnBox .shop__item__cartBtn {
+    width: 20px;
+    height: 20px;
+  }
 }
 /*# sourceMappingURL=shop.css.map */

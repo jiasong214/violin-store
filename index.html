@@ -35,10 +35,13 @@
               </li>
             </ul>
             <aside class="global-nav__cartModal">
+              <span class="global-nav__cartModal__square"></span>
+              <div class="global-nav__cartModal__innerbox">
+              <span class="global-nav__cartModal__closeBtn">&times;</span>
               <div class="global-nav__cartModal__myItems">
                 <ul class="global-nav__cartModal__myItems__list"></ul>
                 <div class="global-nav__cartModal__myItems__checkoutBtn">
-                  Check out
+                  <a href="cart.html">Check out</a>
                 </div>
               </div>
               <div class="global-nav__cartModal__empty">You Bag is empty.</div>
@@ -58,7 +61,7 @@
                   <p>Sign In</p>
                 </a>
               </div>
-              <span class="global-nav__cartModal__square"></span>
+            </div>
             </aside>
           </div>
         </nav>
@@ -79,7 +82,7 @@
           </ul>
         </nav>
       </header>
-      <main>
+      <main class="for-desktop">
         <section class="intro-video scroll-section-0">
           <canvas
             class="intro-video__canvas fixed"
@@ -87,11 +90,10 @@
             height="1080px"
           ></canvas>
           <div class="intro-video__title">
-            <h1>Violin.</h1>
-            <a href=""
-              >Perferendis dolorum aperiam, eligendi fugit deserunt esse
-              fugiat.</a
-            >
+            <h1>Violin Pro.</h1>
+            <p>
+              Perferendis dolorum aperiam, eligendi fugit deserunt esse fugiat.
+            </p>
           </div>
           <div class="intro-video__text --a fixed">
             <p>Lorem ipsum dolor <br />sit amet consectetur.</p>
@@ -174,17 +176,12 @@
           </div>
           <div class="violinist__desc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            exercitationem voluptatum quo, iusto facere ea. Labore nam voluptas
+            exercitationem <em>voluptatum quo</em> - iusto facere ea. Labore nam voluptas
             possimus placeat quos modi ex accusantium esse in corrupti
-            voluptatum reiciendis, quae, odit facilis. Facere sit tenetur
+            voluptatum reiciendis, quae, odit facilis. <em>Facere sit</em> tenetur
             officia doloribus deserunt esse. Tempora, aspernatur? Illo sapiente
-            eius explicabo facilis tempore. Sequi libero doloribus repellat
-            natus quia cum! Adipisci soluta velit tempora ea! Quasi, laborum
-            pariatur. Velit eligendi, consequuntur quis ut magni nostrum earum
-            minus et, nisi impedit facere doloribus a obcaecati cum sint
-            repudiandae at aliquid molestiae possimus rem? Minima, ducimus
-            veritatis, nam alias ex maxime, repudiandae inventore est tenetur
-            laboriosam obcaecati sunt!
+            eius <em>explicabo facilis</em> tempore. Sequi libero doloribus repellat
+            natus quia cum! 
           </div>
         </section>
         <section class="support scroll-section-4">
@@ -233,7 +230,124 @@
             nostrum, necessitatibus, architecto rerum veniam modi perspiciatis,
             animi labore expedita! Quos, nihil?
           </p>
-          <a class="shop__shop-btn" href="/shop.html">Shop Now</a>
+          <a class="shop__shop-btn" href="shop.html">Shop Now</a>
+        </section>
+      </main>
+      <main class="for-mobile">
+        <section class="m__intro">
+          <div class="intro__innerbox">
+          <div class="intro__title">
+            <h1>Violin Pro.</h1>
+            <p>
+              Perferendis dolorum aperiam, eligendi fugit deserunt esse fugiat.
+            </p>
+          </div>
+          <img class="intro__image" src="/images/main_images/intro-mobile.png" alt="">
+        </div>
+          <div class="intro__text">
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Adipisicing elit ea expedita impedit nostrum commodi sed.</p>
+            <p>Beatae rerumipsa doloremque.</p>
+          </div>
+        </section>
+        <section class="m__product-desc">
+          <h2 class="product-desc__title">Corporis 2 nobis quidem.</h2>
+          <h3 class="product-desc__subTitle">A odit quidem unde distinctio.</h3>
+          <p class="product-desc__text">
+            <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing
+            elit. Corporis nobis quidem mollitia ratione tenetur. Quisquam, ipsa
+            voluptatibus, fugit, nihil consequuntur ipsum sequi sapiente
+            blanditiis. <strong>Tempora unde</strong> praesentium cum id illum
+            distinctio aliquid harum repellendus perferendis! Consectetur,
+            repudiandae aperiam corporis quaerat ut architecto illo deleniti
+            aliquid sed rem fugit. Sint,
+            <strong>40 explicabo sapiente nam</strong> autem quisquam libero
+            dolorem delectus modi fugit animi dolore cupiditate optio, saepe
+            odit beatae quidem unde distinctio esse maiores illo ad magni
+            laborum!
+          </p>
+          <a href="" class="product-desc__link">
+            Learn more about Corporis 2 >
+          </a>
+        </section>
+        <section class="m__product-feature">
+            <div class="product-feature__title">
+                <small>Omnis facilis</small>
+                Illo consectetur.
+            </div>
+            <div class='product-feature__innerbox'>
+            <img
+              class="product-feature__img"
+              src="images/main_images/product-feature__violin.jpg"
+              alt="violin"
+            />
+
+          <div class="product-feature__desc --a">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur. <br />
+              Dignissimos deleniti aspernatur.
+            </p>
+            <div class="product-feature__desc__pin"></div>
+          </div>
+          <div class="product-feature__desc --b">
+            <h3>Autem modi animi</h3>
+            <p>
+              Exercitationem sit laboriosam.<br />
+              dignissimos error iure dolorum illum laudantium.
+            </p>
+            <div class="product-feature__desc__pin"></div>
+          </div>
+        </section>
+        <section class="m__violinist">
+          <div class="violinist__title">
+            <h2>Possimus</h2>
+            <p>Labore nam possimus.</p>
+          </div>
+          <div class="violinist__image">
+            <div class="violinist__violinist-info">
+              <h2>Lorem Ipsum</h2>
+              <h3>Violinist & Composer</h3>
+            </div>
+          </div>
+          <div class="violinist__desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            exercitationem <em>voluptatum quo</em> - iusto facere ea. Labore nam voluptas
+            possimus placeat quos modi ex accusantium esse in corrupti
+            voluptatum reiciendis, quae, odit facilis. <em>Facere sit</em> tenetur
+            officia doloribus deserunt esse. Tempora, aspernatur? Illo sapiente
+            eius <em>explicabo facilis</em> tempore. Sequi libero doloribus repellat
+            natus quia cum! 
+          </div>
+        </section>
+        <section class="m__support">
+          <div class="support__title">with support for</div>
+          <object
+            class="support__bow-logo"
+            data="images/main_images/support__bowLogo.svg"
+            type="image/svg+xml"
+          ></object>
+          <img
+            class="support__bowImage"
+            src="images/main_images/support__bow.png"
+          />
+          <div class="support__case-logo">
+            <p>and</p>
+            <h2>BAM Case</h2>
+            
+          </div>
+          <img
+            class="support__caseImage"
+            src="images/main_images/support__case.png"
+          />
+        </section>
+        <section class="m__shop">
+          <h1 class="shop__title">Find the right violin for you.</h1>
+          <p class="shop__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            est accusamus ducimus voluptas.
+          </p>
+          <a class="shop__shop-btn" href="shop.html">Shop Now</a>
         </section>
       </main>
       <footer>

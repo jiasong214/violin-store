@@ -32,7 +32,6 @@ a {
 body {
   background: white;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 14px;
   color: black;
   overflow-x: hidden;
 }
@@ -127,7 +126,7 @@ header nav.global-nav .global-nav__cartBtn .global-nav__cartBtn__circle {
 }
 
 header nav.global-nav .global-nav__cartBtn .global-nav__cartBtn__circle .global-nav__cartBtn__num {
-  font-size: 0.6rem;
+  font-size: 10px;
   color: #333333;
   text-align: center;
   line-height: 1.2;
@@ -135,18 +134,8 @@ header nav.global-nav .global-nav__cartBtn .global-nav__cartBtn__circle .global-
 
 header nav.global-nav .global-nav__cartModal {
   display: none;
-  width: 300px;
-  padding: 20px;
-  background: white;
-  border-radius: 20px;
-  border: 1px solid #d2d2d7;
-  position: absolute;
-  top: calc(100% + 15px);
-  left: calc(100% - 11px);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  position: relative;
   z-index: 30;
-  color: black;
 }
 
 header nav.global-nav .global-nav__cartModal.active {
@@ -159,6 +148,51 @@ header nav.global-nav .global-nav__cartModal.empty .global-nav__cartModal__myIte
 
 header nav.global-nav .global-nav__cartModal.empty .global-nav__cartModal__empty {
   display: block !important;
+}
+
+header nav.global-nav .global-nav__cartModal .global-nav__cartModal__innerbox {
+  width: 360px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #d2d2d7;
+  border-radius: 20px;
+  color: black;
+  position: absolute;
+  top: 22px;
+  right: -180px;
+}
+
+@media (max-width: 1360px) {
+  header nav.global-nav .global-nav__cartModal .global-nav__cartModal__innerbox {
+    right: -9vw;
+  }
+}
+
+header nav.global-nav .global-nav__cartModal .global-nav__cartModal__square {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-left: 1px solid #d2d2d7;
+  border-top: 1px solid #d2d2d7;
+  position: absolute;
+  top: 21px;
+  left: calc(100% - 11px);
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
+  z-index: 31;
+}
+
+header nav.global-nav .global-nav__cartModal .global-nav__cartModal__closeBtn {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 16px;
+  color: #626273;
+  font-weight: 100;
+  line-height: 1;
+  cursor: pointer;
 }
 
 header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems {
@@ -175,7 +209,7 @@ header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems li 
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #d2d2d7;
 }
 
@@ -189,7 +223,22 @@ header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems li 
 }
 
 header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems li .global-nav__cartModal__myItems__item__name {
-  font-size: 0.8rem;
+  font-size: 14px;
+}
+
+header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems .global-nav__cartModal__myItems__quantity {
+  display: inline-block;
+  padding: 0 10px;
+  background: white;
+  position: relative;
+  top: -12px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 12px;
+  color: #626273;
+  font-weight: 300;
+  text-align: center;
 }
 
 header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems .global-nav__cartModal__myItems__checkoutBtn {
@@ -197,7 +246,7 @@ header nav.global-nav .global-nav__cartModal .global-nav__cartModal__myItems .gl
   padding: 5px 0;
   background: #0071e3;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 18px;
   color: white;
   font-weight: 300;
   text-align: center;
@@ -221,7 +270,7 @@ header nav.global-nav .global-nav__cartModal .global-nav__cartModal__menu a {
           align-items: center;
   padding: 10px 5px;
   border-top: 1px solid #d2d2d7;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #0066cc;
   font-weight: 300;
 }
@@ -236,18 +285,14 @@ header nav.global-nav .global-nav__cartModal .global-nav__cartModal__menu a obje
   margin-right: 15px;
 }
 
-header nav.global-nav .global-nav__cartModal .global-nav__cartModal__square {
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: white;
-  border-left: 1px solid #d2d2d7;
-  border-top: 1px solid #d2d2d7;
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  -webkit-transform: rotate(45deg) translateX(-50%);
-          transform: rotate(45deg) translateX(-50%);
+@media (max-width: 600px) {
+  header nav.global-nav .global-nav__cartModal .global-nav__cartModal__innerbox {
+    width: 100vw;
+    border: none;
+    border-bottom: 1px solid #d2d2d7;
+    border-radius: 0px;
+    left: -90vw;
+  }
 }
 
 header nav.local-nav {
@@ -265,13 +310,13 @@ header nav.local-nav {
 
 header nav.local-nav .local-nav__title {
   margin-right: auto;
-  font-size: 1.6rem;
+  font-size: 24px;
   font-weight: 700;
 }
 
 header nav.local-nav .local-nav__item {
   margin-left: 25px;
-  font-size: 0.8rem;
+  font-size: 13px;
   font-weight: 300;
   text-align: center;
 }
@@ -283,6 +328,12 @@ header nav.local-nav .local-nav__item.--buy {
   border-radius: 20px;
   color: white;
   line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  header nav.local-nav .local-nav__item:nth-child(2), header nav.local-nav .local-nav__item:nth-child(3) {
+    display: none;
+  }
 }
 
 header.--fixed .local-nav {

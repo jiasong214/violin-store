@@ -33,7 +33,6 @@ a {
 body {
   background: white;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 14px;
   color: black;
   overflow-x: hidden;
 }
@@ -113,7 +112,7 @@ header {
           right: -5px;
 
           .global-nav__cartBtn__num {
-            font-size: 0.6rem;
+            font-size: 10px;
             color: #333333;
             text-align: center;
             line-height: 1.2;
@@ -123,17 +122,8 @@ header {
 
       .global-nav__cartModal {
         display: none;
-        width: 300px;
-        padding: 20px;
-        background: white;
-        border-radius: 20px;
-        border: 1px solid #d2d2d7;
-        position: absolute;
-        top: calc(100% + 15px);
-        left: calc(100% - 11px);
-        transform: translateX(-50%);
+        position: relative;
         z-index: 30;
-        color: black;
 
         &.active {
           display: block;
@@ -147,6 +137,48 @@ header {
           display: block !important;
         }
 
+        .global-nav__cartModal__innerbox {
+          width: 360px;
+          padding: 20px;
+          background: white;
+          border: 1px solid #d2d2d7;
+          border-radius: 20px;
+          color: black;
+          position: absolute;
+          top: 22px;
+          right: -180px;
+
+          @media (max-width: 1360px) {
+            right: -9vw;
+          }
+        }
+
+        .global-nav__cartModal__square {
+          display: block;
+          width: 10px;
+          height: 10px;
+          background: white;
+          border-left: 1px solid #d2d2d7;
+          border-top: 1px solid #d2d2d7;
+          position: absolute;
+          top: 21px;
+          left: calc(100% - 11px);
+          transform: rotate(45deg) translateX(-50%);
+          z-index: 31;
+        }
+
+        .global-nav__cartModal__closeBtn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          font-size: 16px;
+          color: #626273;
+          font-weight: 100;
+          line-height: 1;
+          cursor: pointer;
+        }
+
         .global-nav__cartModal__myItems {
           display: block;
           margin-bottom: 20px;
@@ -156,7 +188,7 @@ header {
             grid-template-columns: 50px 1fr;
             grid-gap: 20px;
             align-items: center;
-            padding: 10px 0;
+            padding: 20px 0;
             border-bottom: 1px solid #d2d2d7;
 
             &:last-child {
@@ -169,8 +201,22 @@ header {
             }
 
             .global-nav__cartModal__myItems__item__name {
-              font-size: 0.8rem;
+              font-size: 14px;
             }
+          }
+
+          .global-nav__cartModal__myItems__quantity {
+            display: inline-block;
+            padding: 0 10px;
+            background: white;
+            position: relative;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #626273;
+            font-weight: 300;
+            text-align: center;
           }
 
           .global-nav__cartModal__myItems__checkoutBtn {
@@ -179,7 +225,7 @@ header {
             background: #0071e3;
             border-radius: 5px;
 
-            font-size: 1rem;
+            font-size: 18px;
             color: white;
             font-weight: 300;
             text-align: center;
@@ -201,7 +247,7 @@ header {
             align-items: center;
             padding: 10px 5px;
             border-top: 1px solid #d2d2d7;
-            font-size: 0.9rem;
+            font-size: 16px;
             color: #0066cc;
             font-weight: 300;
 
@@ -217,17 +263,14 @@ header {
           }
         }
 
-        .global-nav__cartModal__square {
-          display: block;
-          width: 10px;
-          height: 10px;
-          background: white;
-          border-left: 1px solid #d2d2d7;
-          border-top: 1px solid #d2d2d7;
-          position: absolute;
-          top: -3px;
-          left: 50%;
-          transform: rotate(45deg) translateX(-50%);
+        @media (max-width: 600px) {
+          .global-nav__cartModal__innerbox {
+            width: 100vw;
+            border: none;
+            border-bottom: 1px solid #d2d2d7;
+            border-radius: 0px;
+            left: -90vw;
+          }
         }
       }
     }
@@ -244,13 +287,13 @@ header {
 
       .local-nav__title {
         margin-right: auto;
-        font-size: 1.6rem;
+        font-size: 24px;
         font-weight: 700;
       }
 
       .local-nav__item {
         margin-left: 25px;
-        font-size: 0.8rem;
+        font-size: 13px;
         font-weight: 300;
         text-align: center;
 
@@ -261,6 +304,13 @@ header {
           border-radius: 20px;
           color: white;
           line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: none;
+          }
         }
       }
     }

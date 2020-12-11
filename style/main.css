@@ -1,3 +1,35 @@
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 980px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+#container.is-mobile .for-mobile {
+  display: block;
+}
+
+#container.is-mobile .for-desktop {
+  display: none;
+}
+
+#container.is-desktop .for-desktop {
+  display: block;
+}
+
+#container.is-desktop .for-mobile {
+  display: none;
+}
+
 #active-scroll-section-0 .scroll-section-0 .fixed,
 #active-scroll-section-1 .scroll-section-1 .fixed,
 #active-scroll-section-2 .scroll-section-2 .fixed,
@@ -7,13 +39,13 @@
   display: block;
 }
 
-#active-scroll-section-0 {
+#active-scroll-section-0 .for-desktop {
   background: black;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-#active-scroll-section-1 {
+#active-scroll-section-1 .for-desktop {
   background: white;
   -webkit-transition: 1s;
   transition: 1s;
@@ -21,7 +53,7 @@
 
 section {
   position: relative;
-  border: 1px dashed black;
+  border: 1px dashed rgba(0, 0, 0, 0);
 }
 
 section .fixed {
@@ -29,7 +61,7 @@ section .fixed {
   position: fixed;
 }
 
-main {
+main.for-desktop {
   /* intro-video */
   /* product-desc */
   /* product-feature */
@@ -38,13 +70,13 @@ main {
   /* shop */
 }
 
-main .intro-video .intro-video__canvas {
+main.for-desktop .intro-video .intro-video__canvas {
   top: 50%;
   left: 50%;
   z-index: 1;
 }
 
-main .intro-video .intro-video__title {
+main.for-desktop .intro-video .intro-video__title {
   padding-top: 35vh;
   color: white;
   text-align: center;
@@ -52,17 +84,17 @@ main .intro-video .intro-video__title {
   z-index: 2;
 }
 
-main .intro-video .intro-video__title h1 {
+main.for-desktop .intro-video .intro-video__title h1 {
   font-size: 7rem;
   font-weight: 700;
 }
 
-main .intro-video .intro-video__title a {
+main.for-desktop .intro-video .intro-video__title p {
   font-size: 1.6rem;
   font-weight: 600;
 }
 
-main .intro-video .intro-video__text {
+main.for-desktop .intro-video .intro-video__text {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -80,62 +112,62 @@ main .intro-video .intro-video__text {
   z-index: 2;
 }
 
-main .intro-video .intro-video__text > p {
+main.for-desktop .intro-video .intro-video__text > p {
   font-size: 3.8rem;
   color: white;
   font-weight: 600;
   text-align: center;
 }
 
-main .product-desc {
+main.for-desktop .product-desc {
   width: 80vw;
   max-width: 980px;
   margin: 0 auto;
 }
 
-main .product-desc .product-desc__title {
+main.for-desktop .product-desc .product-desc__title {
   padding-top: 100vh;
   font-size: 4.4rem;
   color: gray;
   font-weight: 700;
 }
 
-main .product-desc .product-desc__subTitle {
+main.for-desktop .product-desc .product-desc__subTitle {
   margin-bottom: 50px;
   font-size: 4.4rem;
   color: black;
   font-weight: 700;
 }
 
-main .product-desc .product-desc__text {
+main.for-desktop .product-desc .product-desc__text {
   margin-bottom: 20px;
   font-size: 2rem;
   color: gray;
   font-weight: 400;
 }
 
-main .product-desc .product-desc__text strong {
+main.for-desktop .product-desc .product-desc__text strong {
   color: black;
   font-weight: 600;
 }
 
-main .product-desc .product-desc__link {
+main.for-desktop .product-desc .product-desc__link {
   font-size: 1.4rem;
   color: black;
   font-weight: 600;
 }
 
-main .product-feature {
+main.for-desktop .product-feature {
   position: relative;
 }
 
-main .product-feature .product-feature__innerbox {
+main.for-desktop .product-feature .product-feature__innerbox {
   height: 100vh;
   margin-top: 50vh;
   position: relative;
 }
 
-main .product-feature .product-feature__img {
+main.for-desktop .product-feature .product-feature__img {
   display: block;
   height: 80vh;
   position: absolute;
@@ -146,25 +178,25 @@ main .product-feature .product-feature__img {
   z-index: -1;
 }
 
-main .product-feature .product-feature__img.fixed {
+main.for-desktop .product-feature .product-feature__img.fixed {
   display: none;
   position: fixed;
 }
 
-main .product-feature .product-feature__title p {
+main.for-desktop .product-feature .product-feature__title p {
   font-size: 4.2rem;
   font-weight: 600;
   text-align: center;
   line-height: 1;
 }
 
-main .product-feature .product-feature__title small {
+main.for-desktop .product-feature .product-feature__title small {
   display: block;
   font-size: 1.2rem;
   font-size: 200;
 }
 
-main .product-feature .product-feature__desc {
+main.for-desktop .product-feature .product-feature__desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,22 +210,22 @@ main .product-feature .product-feature__desc {
   opacity: 0;
 }
 
-main .product-feature .product-feature__desc h3 {
+main.for-desktop .product-feature .product-feature__desc h3 {
   font-size: 1rem;
   font-weight: 600;
 }
 
-main .product-feature .product-feature__desc p {
+main.for-desktop .product-feature .product-feature__desc p {
   font-size: 0.8rem;
 }
 
-main .product-feature .product-feature__desc.--a {
+main.for-desktop .product-feature .product-feature__desc.--a {
   max-width: 400px;
   top: 50vh;
   text-align: right;
 }
 
-main .product-feature .product-feature__desc.--a .product-feature__descA__pin {
+main.for-desktop .product-feature .product-feature__desc.--a .product-feature__descA__pin {
   height: 1px;
   background: black;
   position: absolute;
@@ -201,13 +233,13 @@ main .product-feature .product-feature__desc.--a .product-feature__descA__pin {
   top: 10px;
 }
 
-main .product-feature .product-feature__desc.--b {
+main.for-desktop .product-feature .product-feature__desc.--b {
   width: 40%;
   max-width: 300px;
   top: 35vh;
 }
 
-main .product-feature .product-feature__desc.--b .product-feature__descB__pin {
+main.for-desktop .product-feature .product-feature__desc.--b .product-feature__descB__pin {
   height: 1px;
   background: black;
   position: absolute;
@@ -216,7 +248,7 @@ main .product-feature .product-feature__desc.--b .product-feature__descB__pin {
   top: 10px;
 }
 
-main .violinist {
+main.for-desktop .violinist {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -230,28 +262,28 @@ main .violinist {
   padding: 50vh 0;
 }
 
-main .violinist .violinist__title {
+main.for-desktop .violinist .violinist__title {
   width: 80vw;
   max-width: 980px;
   margin: 0 auto;
 }
 
-main .violinist .violinist__title h2 {
+main.for-desktop .violinist .violinist__title h2 {
   font-size: 4rem;
   color: #acacac;
   font-weight: 600;
 }
 
-main .violinist .violinist__title p {
+main.for-desktop .violinist .violinist__title p {
   font-size: 4rem;
   font-weight: 600;
 }
 
-main .violinist .violinist__canvas.fixed {
+main.for-desktop .violinist .violinist__canvas.fixed {
   display: block;
 }
 
-main .violinist .violinist__violinist-info {
+main.for-desktop .violinist .violinist__violinist-info {
   left: 50%;
   top: 50%;
   -webkit-transform: translate3d(-250%, -50%, 0);
@@ -261,17 +293,17 @@ main .violinist .violinist__violinist-info {
   transition: 0.2s;
 }
 
-main .violinist .violinist__violinist-info h2 {
+main.for-desktop .violinist .violinist__violinist-info h2 {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-main .violinist .violinist__violinist-info h3 {
+main.for-desktop .violinist .violinist__violinist-info h3 {
   font-size: 1.1rem;
   font-weight: 300;
 }
 
-main .violinist .violinist__violinist-quote {
+main.for-desktop .violinist .violinist__violinist-quote {
   left: 50%;
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
@@ -281,14 +313,14 @@ main .violinist .violinist__violinist-quote {
   opacity: 0;
 }
 
-main .violinist .violinist__violinist-quote p {
+main.for-desktop .violinist .violinist__violinist-quote p {
   font-size: 3.8rem;
   font-weight: 700;
   color: white;
   text-align: center;
 }
 
-main .violinist .violinist__violinist-quote span {
+main.for-desktop .violinist .violinist__violinist-quote span {
   display: block;
   font-size: 1.6rem;
   font-weight: 600;
@@ -296,22 +328,29 @@ main .violinist .violinist__violinist-quote span {
   text-align: center;
 }
 
-main .violinist .violinist__desc {
+main.for-desktop .violinist .violinist__desc {
   width: 80vw;
   max-width: 980px;
   margin: -135px auto 0;
   font-size: 2rem;
+  color: #888;
+  font-weight: 500;
 }
 
-main .support {
+main.for-desktop .violinist .violinist__desc em {
+  color: black;
+  font-style: normal;
+}
+
+main.for-desktop .support {
   padding-top: 50vh;
 }
 
-main .support .fixed {
+main.for-desktop .support .fixed {
   width: 100%;
 }
 
-main .support .support__title {
+main.for-desktop .support .support__title {
   font-size: 4rem;
   color: white;
   font-weight: 600;
@@ -321,7 +360,7 @@ main .support .support__title {
   z-index: 2;
 }
 
-main .support .support__logo {
+main.for-desktop .support .support__logo {
   width: 10000vw;
   left: 50%;
   top: 50%;
@@ -330,27 +369,27 @@ main .support .support__logo {
   z-index: 1;
 }
 
-main .support .support__text {
+main.for-desktop .support .support__text {
   top: 40vh;
   opacity: 0;
 }
 
-main .support .support__text.--a {
+main.for-desktop .support .support__text.--a {
   z-index: 3;
 }
 
-main .support .support__text.--b {
+main.for-desktop .support .support__text.--b {
   z-index: 5;
 }
 
-main .support .support__text p {
+main.for-desktop .support .support__text p {
   font-size: 3.8rem;
   color: white;
   font-weight: 600;
   text-align: center;
 }
 
-main .support .support__path {
+main.for-desktop .support .support__path {
   left: 50%;
   top: 50%;
   min-width: 850px;
@@ -359,7 +398,7 @@ main .support .support__path {
   z-index: 4;
 }
 
-main .support .support__path path {
+main.for-desktop .support .support__path path {
   fill: none;
   stroke: #0071e3;
   stroke-width: 62;
@@ -369,66 +408,63 @@ main .support .support__path path {
   stroke-dashoffset: 1401;
 }
 
-main .support .support__bowImage {
+main.for-desktop .support .support__bowImage {
   width: auto !important;
   height: 120vh;
-  left: auto;
-  top: auto;
   right: -10%;
   bottom: -80%;
-  width: 3.5vw;
   -webkit-transform: rotate(-120deg);
           transform: rotate(-120deg);
   z-index: 6;
 }
 
-main .support .support__caseImage {
+main.for-desktop .support .support__caseImage {
   width: auto !important;
   height: 100vh;
-  left: auto;
   top: -10vh;
-  right: -10%;
-  width: 3.5vw;
+  right: -150%;
   z-index: 6;
 }
 
-main .support .support__case-logo {
+main.for-desktop .support .support__case-logo {
   text-align: center;
   top: 100vh;
   z-index: 1;
 }
 
-main .support .support__case-logo p {
+main.for-desktop .support .support__case-logo p {
   margin-bottom: 25vh;
   font-size: 3rem;
   font-weight: 700;
 }
 
-main .support .support__case-logo h2 {
+main.for-desktop .support .support__case-logo h2 {
   font-size: 5rem;
   font-weight: 900;
 }
 
-main .shop {
+main.for-desktop .shop {
   width: 80vw;
   max-width: 980px;
   min-height: 60vh;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
-main .shop .shop__title {
+main.for-desktop .shop .shop__title {
   font-size: 3.8rem;
   font-weight: 600;
   text-align: center;
 }
 
-main .shop .shop__text {
+main.for-desktop .shop .shop__text {
   margin-bottom: 30px;
   font-size: 1rem;
   text-align: center;
 }
 
-main .shop .shop__shop-btn {
+main.for-desktop .shop .shop__shop-btn {
   display: block;
   width: 120px;
   padding: 5px 0;
@@ -436,6 +472,288 @@ main .shop .shop__shop-btn {
   background: #0071e3;
   border-radius: 20px;
   font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+
+main.for-mobile {
+  background: white;
+}
+
+main.for-mobile .m__intro {
+  background: black;
+}
+
+main.for-mobile .m__intro .intro__innerbox {
+  height: 100vh;
+  margin-bottom: 20px;
+}
+
+main.for-mobile .m__intro .intro__title {
+  padding-top: calc(104px + 100px);
+  position: relative;
+  z-index: 2;
+}
+
+main.for-mobile .m__intro .intro__title h1,
+main.for-mobile .m__intro .intro__title p {
+  font-size: 7rem;
+  color: white;
+  text-align: center;
+}
+
+main.for-mobile .m__intro .intro__title p {
+  font-size: 1.5rem;
+}
+
+main.for-mobile .m__intro img {
+  display: block;
+  height: 60vw;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+  position: relative;
+  left: 20%;
+  top: -50px;
+  z-index: 1;
+}
+
+main.for-mobile .m__intro .intro__text {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+main.for-mobile .m__intro .intro__text p {
+  margin-bottom: 50px;
+  font-size: 2.4rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+main.for-mobile .m__product-desc {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 30vh;
+}
+
+main.for-mobile .m__product-desc .product-desc__title {
+  font-size: 4.2rem;
+  color: gray;
+  font-weight: 700;
+}
+
+main.for-mobile .m__product-desc .product-desc__subTitle {
+  margin-bottom: 50px;
+  font-size: 4.2rem;
+  color: black;
+  font-weight: 700;
+}
+
+main.for-mobile .m__product-desc .product-desc__text {
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  color: gray;
+  font-weight: 400;
+}
+
+main.for-mobile .m__product-desc .product-desc__text strong {
+  color: black;
+  font-weight: 600;
+}
+
+main.for-mobile .m__product-desc .product-desc__link {
+  font-size: 2rem;
+  color: black;
+  font-weight: 600;
+}
+
+main.for-mobile .m__product-feature {
+  padding-top: 30vh;
+}
+
+main.for-mobile .m__product-feature .product-feature__title {
+  font-size: 4.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+main.for-mobile .m__product-feature .product-feature__title small {
+  display: block;
+  font-size: 1.8rem;
+}
+
+main.for-mobile .m__product-feature .product-feature__innerbox {
+  position: relative;
+}
+
+main.for-mobile .m__product-feature .product-feature__img {
+  width: 80%;
+  position: relative;
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
+}
+
+main.for-mobile .m__product-feature .product-feature__desc {
+  position: absolute;
+}
+
+main.for-mobile .m__product-feature .product-feature__desc h3 {
+  font-size: 2rem;
+}
+
+main.for-mobile .m__product-feature .product-feature__desc p {
+  font-size: 1.2rem;
+}
+
+main.for-mobile .m__product-feature .product-feature__desc .product-feature__desc__pin {
+  position: absolute;
+  top: 15px;
+  right: calc(100% + 5px);
+  width: 20%;
+  height: 1px;
+  background: black;
+}
+
+main.for-mobile .m__product-feature .product-feature__desc.--a {
+  top: 20%;
+  left: 30%;
+}
+
+main.for-mobile .m__product-feature .product-feature__desc.--b {
+  top: 60%;
+  left: 40%;
+}
+
+main.for-mobile .m__violinist {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 30vh;
+}
+
+main.for-mobile .m__violinist .violinist__title h2 {
+  font-size: 4.2rem;
+  color: #acacac;
+  font-weight: 600;
+}
+
+main.for-mobile .m__violinist .violinist__title p {
+  font-size: 4.2rem;
+  font-weight: 600;
+}
+
+main.for-mobile .m__violinist .violinist__image {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 30px;
+  background: url("../images/main_images/violinist__1.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+main.for-mobile .m__violinist .violinist__violinist-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+main.for-mobile .m__violinist .violinist__violinist-info h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+main.for-mobile .m__violinist .violinist__violinist-info h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+main.for-mobile .m__violinist .violinist__desc {
+  font-size: 2.4rem;
+  color: #888;
+  font-weight: 500;
+}
+
+main.for-mobile .m__violinist .violinist__desc em {
+  color: black;
+  font-style: normal;
+}
+
+main.for-mobile .m__support {
+  padding-top: 30vh;
+  position: relative;
+}
+
+main.for-mobile .m__support .support__title {
+  margin-bottom: 50px;
+  font-size: 3.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+main.for-mobile .m__support .support__bow-logo {
+  width: 90%;
+}
+
+main.for-mobile .m__support .support__bowImage {
+  width: 40%;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  -webkit-transform: rotate(-70deg);
+          transform: rotate(-70deg);
+}
+
+main.for-mobile .m__support .support__case-logo {
+  position: relative;
+}
+
+main.for-mobile .m__support .support__case-logo p {
+  margin: 120px 0;
+  font-size: 3.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+main.for-mobile .m__support .support__case-logo h2 {
+  font-size: 6.8rem;
+  text-align: center;
+}
+
+main.for-mobile .m__support .support__caseImage {
+  width: 30%;
+  position: relative;
+  left: 30%;
+  top: -25vw;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+main.for-mobile .m__shop {
+  width: 80vw;
+  min-height: 60vh;
+  margin: 0 auto;
+}
+
+main.for-mobile .m__shop .shop__title {
+  font-size: 5.4vw;
+  font-weight: 600;
+  text-align: center;
+}
+
+main.for-mobile .m__shop .shop__text {
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+main.for-mobile .m__shop .shop__shop-btn {
+  display: block;
+  width: 120px;
+  padding: 5px 0;
+  margin: 0 auto;
+  background: #0071e3;
+  border-radius: 20px;
+  font-size: 1.6rem;
   color: white;
   font-weight: 400;
   text-align: center;
