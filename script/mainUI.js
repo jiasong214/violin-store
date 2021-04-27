@@ -242,12 +242,11 @@
 
   const calcValues = (
     values,
-    currentYOffset = window.pageYOffset - prevScrollHeight
+    // currentYOffset = window.pageYOffset - prevScrollHeight
   ) => {
-    // const currentYOffset = window.pageYOffset - prevScrollHeight;
+    const currentYOffset = window.pageYOffset - prevScrollHeight;
     const sectionHeight = sectionInfo[currentSection].height;
     const scrollRatio = currentYOffset / sectionHeight;
-
     let rv;
 
     if (values.length === 3) {
@@ -260,8 +259,11 @@
           ((currentYOffset - effectStart) / effectHeight) *
             (values[1] - values[0]) +
           values[0];
+
+
       } else if (currentYOffset < effectStart) {
         rv = values[0];
+
       } else if (currentYOffset > effectEnd) {
         rv = values[1];
       }
@@ -281,7 +283,6 @@
     const sectionHeight = sectionInfo[currentSection].height;
     const scrollRatio = currentYOffset / sectionHeight;
 
-    // console.log(`section: ${currentSection}, scrollRatio: ${scrollRatio}`);
 
     switch (currentSection) {
       case 0:
@@ -328,7 +329,6 @@
         break;
       case 1:
         document.body.classList.remove("white-header");
-
         //no effect for section1
         break;
       case 2:
@@ -337,6 +337,8 @@
         //when section's innerbox top touchs browser top, fix the image and make it bigger
         if (scrollRatio > window.innerHeight / 2 / sectionHeight) {
           objs.image.classList.add("fixed");
+
+
           objs.image.style.height = `${calcValues(values.image_height_in)}vh`;
           objs.image.style.transform = `translate3d(-50%,${calcValues(
             values.image_translateY1_in
@@ -395,87 +397,55 @@
           objs.image.style.top = `10vh`;
         }
 
-        // //section 3 image pre-setting
-        // //step 1-0. make a full screen canvas
-        // let widthRatio = window.innerWidth / sectionInfo[3].objs.canvas.width;
-        // let heightRatio =
-        //   window.innerHeight / sectionInfo[3].objs.canvas.height;
-        // let canvasRatio;
 
-        // widthRatio <= heightRatio
-        //   ? (canvasRatio = heightRatio)
-        //   : (canvasRatio = widthRatio);
+        //section 3 image pre-setting
+        if (scrollRatio > 0.7) {
+          const objs = sectionInfo[3].objs;
+					const values = sectionInfo[3].values;
+					const widthRatio = window.innerWidth / objs.canvas.width;
+					const heightRatio = window.innerHeight / objs.canvas.height;
+					let canvasRatio;
 
-        // sectionInfo[3].objs.canvas.style.transform = `scale(${canvasRatio})`;
-        // sectionInfo[3].objs.context.fillStyle = "white";
-        // sectionInfo[3].objs.context.drawImage(
-        //   sectionInfo[3].objs.imagesArray[0],
-        //   0,
-        //   0
-        // );
+          //make a full screen canvas
+          widthRatio <= heightRatio
+            ? (canvasRatio = heightRatio)
+            : (canvasRatio = widthRatio);
 
-        // //step 1-1. set white boxs start, end point
-        // if (!sectionInfo[3].values.rectStart) {
-        //   sectionInfo[3].values.rectStart =
-        //     sectionInfo[3].objs.canvas.offsetTop +
-        //     (sectionInfo[3].objs.canvas.height -
-        //       sectionInfo[3].objs.canvas.height * canvasRatio) /
-        //       2;
-        //   sectionInfo[3].values.leftRect[2].start =
-        //     window.innerHeight / 3 / sectionHeight;
-        //   sectionInfo[3].values.rightRect[2].start =
-        //     window.innerHeight / 3 / sectionHeight;
-        //   sectionInfo[3].values.leftRect[2].end =
-        //     sectionInfo[3].values.rectStart / sectionHeight;
-        //   sectionInfo[3].values.rightRect[2].end =
-        //     sectionInfo[3].values.rectStart / sectionHeight;
-        // }
+            objs.canvas.style.transform = `scale(${canvasRatio})`;
+            objs.context.fillStyle = 'white';
+            objs.context.drawImage(objs.imagesArray[0], 0, 0);
+  
+            //set white boxes start width and end width
+            const recalculatedInnerWidth = document.body.offsetWidth / canvasRatio;
+            const whiteRectWidth = recalculatedInnerWidth * 0.1;
 
-        // let recalculatedInnerWidth = document.body.offsetWidth / canvasRatio;
-        // let rectWidth;
-
-        // //to make canvas style - width: 80vw, max-width: 980px
-        // if (window.innerWidth >= 1225) {
-        //   rectWidth = (window.innerWidth - 980) / 2;
-        //   // console.log(window.innerWidth - rectWidth * 2);
-        //   //사이즈가 안맞음
-        // } else {
-        //   rectWidth = recalculatedInnerWidth * 0.1;
-        // }
-
-        // //step 1-2. set white boxes start width and end width
-        // sectionInfo[3].values.leftRect[0] =
-        //   (sectionInfo[3].objs.canvas.width - recalculatedInnerWidth) / 2;
-        // sectionInfo[3].values.leftRect[1] =
-        //   sectionInfo[3].values.leftRect[0] - rectWidth;
-        // sectionInfo[3].values.rightRect[0] =
-        //   sectionInfo[3].values.leftRect[0] +
-        //   recalculatedInnerWidth -
-        //   rectWidth;
-        // sectionInfo[3].values.rightRect[1] =
-        //   sectionInfo[3].values.rightRect[0] + rectWidth;
-
-        // //draw white boxes on the side
-        // sectionInfo[3].objs.context.fillRect(
-        //   parseInt(calcValues(sectionInfo[3].values.leftRect)),
-        //   0,
-        //   parseInt(rectWidth),
-        //   sectionInfo[3].objs.canvas.height
-        // );
-        // sectionInfo[3].objs.context.fillRect(
-        //   parseInt(calcValues(sectionInfo[3].values.rightRect)),
-        //   0,
-        //   parseInt(rectWidth),
-        //   sectionInfo[3].objs.canvas.height
-        // );
-
+            values.leftRect[0] = (objs.canvas.width - recalculatedInnerWidth) / 2;
+            values.leftRect[1] = values.leftRect[0] - whiteRectWidth;
+            values.rightRect[0] = values.leftRect[0] + recalculatedInnerWidth - whiteRectWidth;
+            values.rightRect[1] = values.rightRect[0] + whiteRectWidth;
+  
+            //draw white boxes on the side
+            objs.context.fillRect(
+              parseInt(values.leftRect[0]),
+              0,
+              parseInt(whiteRectWidth),
+              objs.canvas.height
+            );
+            objs.context.fillRect(
+              parseInt(values.rightRect[0]),
+              0,
+              parseInt(whiteRectWidth),
+              objs.canvas.height
+            );
+          }
+    
         break;
       case 3:
         document.body.classList.remove("white-header");
 
         //step 1-0. make a full screen canvas
-        const widthRatio = window.innerWidth / objs.canvas.width;
-        const heightRatio = window.innerHeight / objs.canvas.height;
+        let widthRatio = window.innerWidth / objs.canvas.width;
+        let heightRatio = window.innerHeight / objs.canvas.height;
         let canvasRatio;
 
         widthRatio <= heightRatio
@@ -497,14 +467,12 @@
           values.rightRect[2].end = values.rectStart / sectionHeight;
         }
 
-        const recalculatedInnerWidth = document.body.offsetWidth / canvasRatio;
-        let rectWidth;
+        let recalculatedInnerWidth = document.body.offsetWidth / canvasRatio;
 
         //to make canvas style - width: 80vw, max-width: 980px
         if (window.innerWidth >= 1225) {
           rectWidth = (window.innerWidth - 980) / 2;
           // console.log(window.innerWidth - rectWidth * 2);
-          //사이즈가 안맞음
         } else {
           rectWidth = recalculatedInnerWidth * 0.1;
         }
@@ -515,6 +483,7 @@
         values.rightRect[0] =
           values.leftRect[0] + recalculatedInnerWidth - rectWidth;
         values.rightRect[1] = values.rightRect[0] + rectWidth;
+        console.log(calcValues(values.rightRect))
 
         //draw white boxes on the side
         objs.context.fillRect(
@@ -718,6 +687,8 @@
 
         break;
       case 5:
+        document.body.classList.add("white-header");
+
         break;
     }
   };
@@ -758,7 +729,7 @@
   const checkUserWidth = () => {
     const conatainer = document.querySelector("#container");
 
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 680) {
       container.classList.add("is-mobile");
       container.classList.remove("is-desktop");
     } else {

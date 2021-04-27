@@ -7,10 +7,16 @@ html {
   @media (max-width: 600px) {
     font-size: 9px;
   }
+  @media (max-width: 480px) {
+    font-size: 7px;
+  }
 }
 
 //responsive design 600px
 #container {
+  width: 100vw;
+  overflow: hidden;
+
   &.is-mobile {
     .for-mobile {
       display: block;
@@ -47,6 +53,16 @@ html {
 
 #active-scroll-section-1 .for-desktop {
   background: white;
+  transition: 1s;
+}
+
+#active-scroll-section-4 {
+  background: white;
+  transition: 1s;
+}
+
+#active-scroll-section-5 {
+  background: black;
   transition: 1s;
 }
 
@@ -162,7 +178,6 @@ main.for-desktop {
       top: 10vh;
       left: 50%;
       transform: translate3d(-50%, 0, 0);
-      z-index: -1;
 
       &.fixed {
         display: none;
@@ -171,6 +186,8 @@ main.for-desktop {
     }
 
     .product-feature__title {
+      position: relative;
+      z-index: 10;
       p {
         font-size: 4.2rem;
         font-weight: 600;
@@ -243,6 +260,8 @@ main.for-desktop {
       width: 80vw;
       max-width: 980px;
       margin: 0 auto;
+      position: relative;
+      z-index: 10;
 
       h2 {
         font-size: 4rem;
@@ -421,13 +440,17 @@ main.for-desktop {
   .shop {
     width: 80vw;
     max-width: 980px;
-    min-height: 60vh;
+    height: 120vh;
     margin: 0 auto;
     position: relative;
     z-index: 10;
+    opacity: 0;
+    transition: 0.5s;
 
     .shop__title {
+      padding-top: 55vh;
       font-size: 3.8rem;
+      color: white;
       font-weight: 600;
       text-align: center;
     }
@@ -435,6 +458,8 @@ main.for-desktop {
     .shop__text {
       margin-bottom: 30px;
       font-size: 1rem;
+      color: white;
+
       text-align: center;
     }
 
@@ -451,6 +476,11 @@ main.for-desktop {
       text-align: center;
     }
   }
+}
+
+#active-scroll-section-5 .shop {
+  opacity: 1;
+  transition: 0.5s;
 }
 
 main.for-mobile {

@@ -14,6 +14,17 @@ html {
   }
 }
 
+@media (max-width: 480px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+#container {
+  width: 100vw;
+  overflow: hidden;
+}
+
 #container.is-mobile .for-mobile {
   display: block;
 }
@@ -47,6 +58,18 @@ html {
 
 #active-scroll-section-1 .for-desktop {
   background: white;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#active-scroll-section-4 {
+  background: white;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#active-scroll-section-5 {
+  background: black;
   -webkit-transition: 1s;
   transition: 1s;
 }
@@ -175,12 +198,16 @@ main.for-desktop .product-feature .product-feature__img {
   left: 50%;
   -webkit-transform: translate3d(-50%, 0, 0);
           transform: translate3d(-50%, 0, 0);
-  z-index: -1;
 }
 
 main.for-desktop .product-feature .product-feature__img.fixed {
   display: none;
   position: fixed;
+}
+
+main.for-desktop .product-feature .product-feature__title {
+  position: relative;
+  z-index: 10;
 }
 
 main.for-desktop .product-feature .product-feature__title p {
@@ -266,6 +293,8 @@ main.for-desktop .violinist .violinist__title {
   width: 80vw;
   max-width: 980px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 main.for-desktop .violinist .violinist__title h2 {
@@ -446,14 +475,19 @@ main.for-desktop .support .support__case-logo h2 {
 main.for-desktop .shop {
   width: 80vw;
   max-width: 980px;
-  min-height: 60vh;
+  height: 120vh;
   margin: 0 auto;
   position: relative;
   z-index: 10;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 main.for-desktop .shop .shop__title {
+  padding-top: 55vh;
   font-size: 3.8rem;
+  color: white;
   font-weight: 600;
   text-align: center;
 }
@@ -461,6 +495,7 @@ main.for-desktop .shop .shop__title {
 main.for-desktop .shop .shop__text {
   margin-bottom: 30px;
   font-size: 1rem;
+  color: white;
   text-align: center;
 }
 
@@ -475,6 +510,12 @@ main.for-desktop .shop .shop__shop-btn {
   color: white;
   font-weight: 400;
   text-align: center;
+}
+
+#active-scroll-section-5 .shop {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 main.for-mobile {
