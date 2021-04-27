@@ -727,7 +727,7 @@
   };
 
   const checkUserWidth = () => {
-    const conatainer = document.querySelector("#container");
+    const container = document.querySelector("#container");
 
     if (window.innerWidth < 680) {
       container.classList.add("is-mobile");
@@ -753,8 +753,6 @@
     setSectionHeight();
     setCurrentSection();
     setCanvasScale();
-
-    // sectionInfo[3].values.rectStart = 0;
   });
 
   window.addEventListener("orientationchange", () => {
@@ -782,18 +780,19 @@
   window.addEventListener("load", () => {
     checkUserWidth();
     setSectionHeight();
-    setCurrentSection();
-    setCanvasScale();
     setCanvasImage();
+    setCanvasScale();
+    setCurrentSection();
 
-    //어디서 시간이 걸리는지?
-    setTimeout(() => {
-      //set the first screen
+    //set the first screen
+    const intervalId = setInterval(() => {
       sectionInfo[0].objs.context.drawImage(
         sectionInfo[0].objs.videoImages[1],
         0,
         0
       );
-    }, 100);
+
+      setTimeout(() => clearInterval(intervalId), 2000);
+      }, 100);
   });
 })();
