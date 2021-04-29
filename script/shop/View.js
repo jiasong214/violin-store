@@ -23,7 +23,7 @@ const View = (() => {
       const shop__item__buyBtn = document.createElement("a");
       shop__item__buyBtn.classList.add("shop__item__buyBtn");
       shop__item__buyBtn.textContent = "Buy now";
-      shop__item__buyBtn.setAttribute("href", "#");
+      shop__item__buyBtn.setAttribute("href", "cart.html");
 
       const shop__item__cartBtn = document.createElement("div");
       shop__item__cartBtn.classList.add("shop__item__cartBtn");

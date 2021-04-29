@@ -4,7 +4,7 @@ Violin store website inspired by Apple product page.
 
 **[click here for demo](https://jiasong214.github.io/violin_store/)**
 
-![screenshot](https://jiasong214.github.io/violin_store/blob/main/images/demoVideo.mp4)
+![screenshot](https://jiasong214.github.io/violin_store/blob/main/demoVideo.mp4)
 
 ## Tech/framework used
 
