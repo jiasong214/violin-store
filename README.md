@@ -1,6 +1,6 @@
-# Violin store (Apple UI style)
+# Violin store
 
-Violin store website inspired by Apple product page.
+Highly interactive website inspired by Apple's product page.
 
 **[click here for demo](https://jiasong214.github.io/violin-store/)**
 
@@ -16,4 +16,5 @@ Violin store website inspired by Apple product page.
 
 ## Features
 
-- Apple style UI interaction with pure javascript
+- Apple style UI interaction with pure javascript.
+- Simple shopping cart using localStorage.
