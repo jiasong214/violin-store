@@ -483,7 +483,6 @@
         values.rightRect[0] =
           values.leftRect[0] + recalculatedInnerWidth - rectWidth;
         values.rightRect[1] = values.rightRect[0] + rectWidth;
-        console.log(calcValues(values.rightRect))
 
         //draw white boxes on the side
         objs.context.fillRect(
