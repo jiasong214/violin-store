@@ -36,6 +36,13 @@ body {
   overflow-x: hidden;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: white;
+    color: black;
+  }
+}
+
 /* header */
 .white-header header {
   color: white;

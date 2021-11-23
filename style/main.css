@@ -20,6 +20,51 @@ html {
   }
 }
 
+#pop-up {
+  width: 90vw;
+  padding: 10px 15px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.205);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.205);
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  bottom: -10vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  z-index: 999;
+}
+
+@media (max-width: 480px) {
+  #pop-up {
+    font-size: 14px;
+  }
+}
+
+#pop-up.--active {
+  -webkit-transform: translate(-50%, -250%);
+          transform: translate(-50%, -250%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#pop-up button {
+  all: unset;
+  display: block;
+}
+
 #container {
   width: 100vw;
   overflow: hidden;

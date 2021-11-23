@@ -738,6 +738,18 @@
     }
   };
 
+  const noticeMobile = () => {
+    const popUp = document.querySelector("#pop-up");
+
+    setTimeout(() => {
+      popUp.classList.add("--active");
+    }, 1000);
+
+    popUp.addEventListener("click", () => {
+      popUp.classList.remove("--active");
+    })
+  }
+
   const changeMobileHeaderColor = () => {
     const intro = document.querySelector(".m__intro");
 
@@ -779,10 +791,12 @@
 
   window.addEventListener("load", () => {
     checkUserWidth();
+    noticeMobile();
     setSectionHeight();
     setCanvasImage();
     setCanvasScale();
     setCurrentSection();
+    
 
     //set the first screen
     const intervalId = setInterval(() => {

@@ -35,6 +35,11 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   color: black;
   overflow-x: hidden;
+
+  @media (prefers-color-scheme: dark) {
+    background: white;
+    color: black;
+  }
 }
 
 /* header */

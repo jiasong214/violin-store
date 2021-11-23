@@ -13,6 +13,37 @@ html {
 }
 
 //responsive design 600px
+#pop-up {
+  width: 90vw;
+  padding: 10px 15px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.205);
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: -10vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: transform 0.3s;
+
+  z-index: 999;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+
+  &.--active {
+    transform: translate(-50%, -250%);
+    transition: transform 0.3s;
+  }
+
+  button {
+    all: unset;
+    display: block;
+  }
+}
+
 #container {
   width: 100vw;
   overflow: hidden;
